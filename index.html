@@ -1,129 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Finxa Financial Services</title>
-<style>
-body { font-family: Arial; margin: 0; background: #f2f2f2; }
-header { background: #003366; color: white; padding: 15px; text-align: center; }
-nav button { margin: 5px; padding: 8px 12px; cursor: pointer; }
-section { background: white; margin: 15px; padding: 20px; border-radius: 8px; }
-input, select, textarea, button {
-  width: 100%; padding: 10px; margin-top: 8px;
-}
-button { background: #003366; color: white; border: none; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finxa Financial Services</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
 
-/* WhatsApp Floating Button */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-}
-</style>
+        /* Header and Navigation */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        .nav-links a {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #cce7ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section h2 {
+            color: #007bff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        section p {
+            margin-bottom: 1rem;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: #f8f9fa;
+            text-align: center;
+            padding-top: 6rem;
+        }
+        #home h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Us */
+        #about {
+            background-color: #fff;
+        }
+
+        /* Loan Services */
+        #loans {
+            background-color: #f8f9fa;
+        }
+        .loan-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .loan-item {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .loan-item h3 {
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact */
+        #contact {
+            background-color: #fff;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            .nav-links {
+                margin-top: 1rem;
+            }
+            .nav-links li {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+            #home h1 {
+                font-size: 2rem;
+            }
+            .loan-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <div class="logo">Finxa Financial Services</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#loans">Loan Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-  <h1 id="title">Finxa Financial Services</h1>
-  <nav>
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('mr')">मराठी</button>
-    <button onclick="setLang('hi')">हिंदी</button>
-  </nav>
-</header>
+    <section id="home">
+        <h1>Welcome to Finxa Financial Services</h1>
+        <p>Your trusted partner for financial solutions. We offer a range of loan services tailored to your needs.</p>
+    </section>
 
-<section>
-  <h2 id="home">Welcome</h2>
-  <p id="homeText">We provide trusted loan solutions.</p>
-</section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Finxa Financial Services is a leading NBFC providing reliable and efficient financial products. With years of experience, we aim to empower individuals and businesses with accessible credit options.</p>
+    </section>
 
-<section>
-  <h2 id="services">Services</h2>
-  <p id="servicesText">Home Loan, Business Loan, Personal Loan</p>
-</section>
+    <section id="loans">
+        <h2>Loan Services</h2>
+        <div class="loan-list">
+            <div class="loan-item">
+                <h3>Business Loan</h3>
+                <p>Flexible financing for your business growth. Quick approval and competitive rates.</p>
+            </div>
+            <div class="loan-item">
+                <h3>Personal Loan</h3>
+                <p>Instant loans for personal needs. Easy application process with minimal documentation.</p>
+            </div>
+            <div class="loan-item">
+                <h3>Home Loan</h3>
+                <p>Achieve your dream home with our affordable home loan options.</p>
+            </div>
+            <div class="loan-item">
+                <h3>Loan Against Property</h3>
+                <p>Leverage your property for quick funds. Attractive interest rates and flexible terms.</p>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2 id="about">About Us</h2>
-  <p id="aboutText">Finxa Financial Services is a trusted finance partner.</p>
-</section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Have a question or need assistance? Fill out the form below to inquire about our services.</p>
+        <form id="inquiryForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
 
-<section>
-  <h2 id="formTitle">Customer Details</h2>
-  <form onsubmit="sendWhatsApp(); return false;">
-    <input id="name" type="text" placeholder="Full Name" required>
-    <input id="mobile" type="tel" placeholder="Mobile Number" required>
-    <input id="email" type="email" placeholder="Email">
-    <select id="loan">
-      <option>Home Loan</option>
-      <option>Business Loan</option>
-      <option>Personal Loan</option>
-    </select>
-    <input id="city" type="text" placeholder="City">
-    <textarea id="msg" placeholder="Message"></textarea>
-    <button type="submit">Submit & Send on WhatsApp</button>
-  </form>
-</section>
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" id="mobileNumber" name="mobileNumber" required>
 
-<section>
-  <h2 id="contact">Contact</h2>
-  <p>📞 7977854590</p>
-</section>
+            <label for="loanType">Loan Type</label>
+            <select id="loanType" name="loanType" required>
+                <option value="">Select Loan Type</option>
+                <option value="business">Business Loan</option>
+                <option value="personal">Personal Loan</option>
+                <option value="home">Home Loan</option>
+                <option value="property">Loan Against Property</option>
+            </select>
 
-<!-- Floating WhatsApp Button -->
-<a class="whatsapp" href="https://wa.me/917977854590" target="_blank">💬</a>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 
-<script>
-function sendWhatsApp() {
-  var name = document.getElementById("name").value;
-  var mobile = document.getElementById("mobile").value;
-  var email = document.getElementById("email").value;
-  var loan = document.getElementById("loan").value;
-  var city = document.getElementById("city").value;
-  var msg = document.getElementById("msg").value;
+    <footer>
+        <p>&copy; 2023 Finxa Financial Services. All rights reserved.</p>
+    </footer>
 
-  var text =
-    "📌 New Loan Enquiry %0A%0A" +
-    "Name: " + name + "%0A" +
-    "Mobile: " + mobile + "%0A" +
-    "Email: " + email + "%0A" +
-    "Loan Type: " + loan + "%0A" +
-    "City: " + city + "%0A" +
-    "Message: " + msg;
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-  window.open("https://wa.me/917977854590?text=" + text, "_blank");
-}
-
-function setLang(lang) {
-  if(lang === 'mr') {
-    title.innerText = "Finxa फायनान्शियल सर्व्हिसेस";
-    home.innerText = "स्वागत आहे";
-    homeText.innerText = "आम्ही विश्वासार्ह कर्ज सेवा पुरवतो.";
-    services.innerText = "सेवा";
-    servicesText.innerText = "होम लोन, बिझनेस लोन, पर्सनल लोन";
-    about.innerText = "आमच्याबद्दल";
-    aboutText.innerText = "Finxa ही विश्वासार्ह फायनान्स कंपनी आहे.";
-    formTitle.innerText = "ग्राहक माहिती";
-  }
-  if(lang === 'hi') {
-    title.innerText = "Finxa Financial Services";
-    home.innerText = "स्वागत है";
-    homeText.innerText = "हम भरोसेमंद लोन सेवाएं प्रदान करते हैं।";
-    services.innerText = "सेवाएं";
-    servicesText.innerText = "होम लोन, बिज़नेस लोन, पर्सनल लोन";
-    about.innerText = "हमारे बारे में";
-    aboutText.innerText = "Finxa एक विश्वसनीय फाइनेंस कंपनी है।";
-    formTitle.innerText = "ग्राहक विवरण";
-  }
-  if(lang === 'en') location.reload();
-}
-</script>
-
+        // Form submission handler
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const mobileNumber = document.getElementById('mobileNumber').value;
+            const loanType = document.getElementById('loanType').value;
+            
+            // Simple alert for demonstration; in a real app, send to server
+            alert(`Thank you, ${fullName}! We have received your inquiry for ${loanType}. Our team will contact you at ${mobileNumber} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
