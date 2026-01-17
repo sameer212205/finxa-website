@@ -12,264 +12,421 @@
             box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fff;
+            background-color: #f9f9f9;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        ul {
-            list-style: none;
-        }
-
-        /* Header and Navigation */
-        header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-        }
-        nav {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1rem;
+            padding: 0 20px;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 2rem;
-        }
-        .nav-links a {
+        /* Color Scheme: White (#fff), Navy Blue (#003366), Soft Grey (#e0e0e0) */
+        header, footer {
+            background-color: #003366;
             color: #fff;
-            font-weight: bold;
-            transition: color 0.3s;
         }
-        .nav-links a:hover {
-            color: #cce7ff;
-        }
-
-        /* Sections */
         section {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 60px 0;
+            background-color: #fff;
         }
-        section h2 {
-            color: #007bff;
-            margin-bottom: 1rem;
-            text-align: center;
+        section:nth-child(even) {
+            background-color: #f9f9f9;
         }
-        section p {
-            margin-bottom: 1rem;
+        h1, h2, h3 {
+            margin-bottom: 20px;
         }
-
-        /* Home Section */
-        #home {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding-top: 6rem;
-        }
-        #home h1 {
+        h1 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
-
-        /* About Us */
-        #about {
+        h2 {
+            font-size: 2rem;
+            color: #003366;
+        }
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #003366, #e0e0e0);
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
             background-color: #fff;
-        }
-
-        /* Loan Services */
-        #loans {
-            background-color: #f8f9fa;
-        }
-        .loan-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-        .loan-item {
-            background-color: #fff;
-            padding: 1rem;
+            color: #003366;
+            padding: 15px 30px;
+            text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        /* About Us */
+        .about {
+            text-align: center;
+        }
+        /* Services */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .service {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .loan-item h3 {
-            color: #007bff;
-            margin-bottom: 0.5rem;
+        .service h3 {
+            color: #003366;
         }
-
-        /* Contact */
-        #contact {
-            background-color: #fff;
+        /* Why Choose Us */
+        .why-choose {
+            text-align: center;
+        }
+        .reasons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .reason {
+            width: 300px;
+            margin: 10px;
+        }
+        /* Form */
+        .form-section {
+            text-align: center;
         }
         form {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 5px;
             font-weight: bold;
         }
-        input, select, button {
+        input, select, textarea {
             width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
             border-radius: 4px;
         }
         button {
-            background-color: #007bff;
+            background-color: #003366;
             color: #fff;
+            padding: 15px 30px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
+            font-size: 1rem;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #005599;
         }
-
         /* Footer */
         footer {
-            background-color: #007bff;
-            color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
-
+        /* Language Switcher */
+        .lang-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .lang-switcher button {
+            background: none;
+            border: 1px solid #fff;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .lang-switcher button.active {
+            background-color: #fff;
+            color: #003366;
+        }
+        /* Logo */
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px 0;
+        }
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-            .nav-links {
-                margin-top: 1rem;
-            }
-            .nav-links li {
-                margin-left: 0;
-                margin-right: 1rem;
-            }
-            #home h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
-            .loan-list {
-                grid-template-columns: 1fr;
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .reasons {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Finxa Financial Services</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#loans">Loan Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">Finxa Financial Services</div> <!-- Placeholder for logo -->
+            <div class="lang-switcher">
+                <button id="en" class="active">EN</button>
+                <button id="mr">MR</button>
+                <button id="hi">HI</button>
+            </div>
+        </div>
     </header>
 
-    <section id="home">
-        <h1>Welcome to Finxa Financial Services</h1>
-        <p>Your trusted partner for financial solutions. We offer a range of loan services tailored to your needs.</p>
+    <section class="hero">
+        <div class="container">
+            <h1 id="hero-title">Empowering Your Financial Future</h1>
+            <p id="hero-subtitle">Get the best loan services tailored for your needs.</p>
+            <a href="#form" class="cta-button">Apply Now</a>
+        </div>
     </section>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Finxa Financial Services is a leading NBFC providing reliable and efficient financial products. With years of experience, we aim to empower individuals and businesses with accessible credit options.</p>
+    <section class="about" id="about">
+        <div class="container">
+            <h2 id="about-title">About Us</h2>
+            <p id="about-text">Finxa Financial Services is committed to providing reliable and efficient financial solutions. We offer a range of loan services to help individuals and businesses achieve their goals.</p>
+        </div>
     </section>
 
-    <section id="loans">
-        <h2>Loan Services</h2>
-        <div class="loan-list">
-            <div class="loan-item">
-                <h3>Business Loan</h3>
-                <p>Flexible financing for your business growth. Quick approval and competitive rates.</p>
-            </div>
-            <div class="loan-item">
-                <h3>Personal Loan</h3>
-                <p>Instant loans for personal needs. Easy application process with minimal documentation.</p>
-            </div>
-            <div class="loan-item">
-                <h3>Home Loan</h3>
-                <p>Achieve your dream home with our affordable home loan options.</p>
-            </div>
-            <div class="loan-item">
-                <h3>Loan Against Property</h3>
-                <p>Leverage your property for quick funds. Attractive interest rates and flexible terms.</p>
+    <section class="services" id="services">
+        <div class="container">
+            <h2 id="services-title">Our Loan Services</h2>
+            <div class="services">
+                <div class="service">
+                    <h3 id="business-loan">Business Loan</h3>
+                    <p id="business-desc">Flexible financing for your business expansion and operations.</p>
+                </div>
+                <div class="service">
+                    <h3 id="personal-loan">Personal Loan</h3>
+                    <p id="personal-desc">Quick and easy loans for personal needs and emergencies.</p>
+                </div>
+                <div class="service">
+                    <h3 id="home-loan">Home Loan</h3>
+                    <p id="home-desc">Affordable home loans to make your dream home a reality.</p>
+                </div>
+                <div class="service">
+                    <h3 id="property-loan">Loan Against Property</h3>
+                    <p id="property-desc">Leverage your property for instant liquidity.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Have a question or need assistance? Fill out the form below to inquire about our services.</p>
-        <form id="inquiryForm">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="fullName" required>
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <h2 id="why-title">Why Choose Us?</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <h3 id="reason1">Expert Guidance</h3>
+                    <p id="reason1-desc">Our team of experts provides personalized advice.</p>
+                </div>
+                <div class="reason">
+                    <h3 id="reason2">Fast Approval</h3>
+                    <p id="reason2-desc">Quick processing and approval of your loan applications.</p>
+                </div>
+                <div class="reason">
+                    <h3 id="reason3">Competitive Rates</h3>
+                    <p id="reason3-desc">Attractive interest rates and flexible terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <label for="mobileNumber">Mobile Number</label>
-            <input type="tel" id="mobileNumber" name="mobileNumber" required>
+    <section class="form-section" id="form">
+        <div class="container">
+            <h2 id="form-title">Get in Touch</h2>
+            <form id="contact-form">
+                <label for="name" id="name-label">Name</label>
+                <input type="text" id="name" required>
 
-            <label for="loanType">Loan Type</label>
-            <select id="loanType" name="loanType" required>
-                <option value="">Select Loan Type</option>
-                <option value="business">Business Loan</option>
-                <option value="personal">Personal Loan</option>
-                <option value="home">Home Loan</option>
-                <option value="property">Loan Against Property</option>
-            </select>
+                <label for="mobile" id="mobile-label">Mobile</label>
+                <input type="tel" id="mobile" required>
 
-            <button type="submit">Submit</button>
-        </form>
+                <label for="loan-type" id="loan-label">Loan Type</label>
+                <select id="loan-type" required>
+                    <option value="" id="select-option">Select Loan Type</option>
+                    <option value="Business Loan" id="opt-business">Business Loan</option>
+                    <option value="Personal Loan" id="opt-personal">Personal Loan</option>
+                    <option value="Home Loan" id="opt-home">Home Loan</option>
+                    <option value="Loan Against Property" id="opt-property">Loan Against Property</option>
+                </select>
+
+                <label for="city" id="city-label">City</label>
+                <input type="text" id="city" required>
+
+                <label for="message" id="message-label">Message</label>
+                <textarea id="message" rows="4"></textarea>
+
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2023 Finxa Financial Services. All rights reserved.</p>
+        <div class="container">
+            <p id="footer-text">&copy; 2023 Finxa Financial Services. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.nav-links a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Language Content (English, Marathi, Hindi)
+        const content = {
+            en: {
+                heroTitle: "Empowering Your Financial Future",
+                heroSubtitle: "Get the best loan services tailored for your needs.",
+                aboutTitle: "About Us",
+                aboutText: "Finxa Financial Services is committed to providing reliable and efficient financial solutions. We offer a range of loan services to help individuals and businesses achieve their goals.",
+                servicesTitle: "Our Loan Services",
+                businessLoan: "Business Loan",
+                businessDesc: "Flexible financing for your business expansion and operations.",
+                personalLoan: "Personal Loan",
+                personalDesc: "Quick and easy loans for personal needs and emergencies.",
+                homeLoan: "Home Loan",
+                homeDesc: "Affordable home loans to make your dream home a reality.",
+                propertyLoan: "Loan Against Property",
+                propertyDesc: "Leverage your property for instant liquidity.",
+                whyTitle: "Why Choose Us?",
+                reason1: "Expert Guidance",
+                reason1Desc: "Our team of experts provides personalized advice.",
+                reason2: "Fast Approval",
+                reason2Desc: "Quick processing and approval of your loan applications.",
+                reason3: "Competitive Rates",
+                reason3Desc: "Attractive interest rates and flexible terms.",
+                formTitle: "Get in Touch",
+                nameLabel: "Name",
+                mobileLabel: "Mobile",
+                loanLabel: "Loan Type",
+                selectOption: "Select Loan Type",
+                optBusiness: "Business Loan",
+                optPersonal: "Personal Loan",
+                optHome: "Home Loan",
+                optProperty: "Loan Against Property",
+                cityLabel: "City",
+                messageLabel: "Message",
+                submitBtn: "Submit",
+                footerText: "&copy; 2023 Finxa Financial Services. All rights reserved."
+            },
+            mr: {
+                heroTitle: "तुमच्या आर्थिक भविष्याला शक्ती देणे",
+                heroSubtitle: "तुमच्या गरजांसाठी तयार केलेल्या सर्वोत्तम कर्ज सेवा मिळवा.",
+                aboutTitle: "आमच्याबद्दल",
+                aboutText: "फिनक्सा फायनान्शियल सर्व्हिसेस विश्वासार्ह आणि कार्यक्षम आर्थिक उपाय प्रदान करण्यासाठी वचनबद्ध आहे. आम्ही व्यक्ती आणि व्यवसायांना त्यांचे लक्ष्य साध्य करण्यासाठी विविध कर्ज सेवा देतो.",
+                servicesTitle: "आमच्या कर्ज सेवा",
+                businessLoan: "व्यवसाय कर्ज",
+                businessDesc: "तुमच्या व्यवसाय विस्तार आणि ऑपरेशन्ससाठी लवचिक वित्तपुरवठा.",
+                personalLoan: "वैयक्तिक कर्ज",
+                personalDesc: "वैयक्तिक गरजा आणि आणीबाणीसाठी जलद आणि सोपी कर्जे.",
+                homeLoan: "गृह कर्ज",
+                homeDesc: "तुमचे स्वप्नगृह वास्तवात आणण्यासाठी परवडणारी गृह कर्जे.",
+                propertyLoan: "मालमत्तेविरुद्ध कर्ज",
+                propertyDesc: "तात्काळ तरलतेसाठी तुमच्या मालमत्तेचा लाभ घ्या.",
+                whyTitle: "आम्हाला का निवडावे?",
+                reason1: "तज्ञ मार्गदर्शन",
+                reason1Desc: "आमच्या तज्ञांच्या टीमने वैयक्तिक सल्ला प्रदान करते.",
+                reason2: "जलद मंजूरी",
+                reason2Desc: "तुमच्या कर्ज अर्जांची जलद प्रक्रिया आणि मंजूरी.",
+                reason3: "स्पर्धात्मक दर",
+                reason3Desc: "आकर्षक व्याज दर आणि लवचिक अटी.",
+                formTitle: "संपर्क साधा",
+                nameLabel: "नाव",
+                mobileLabel: "मोबाइल",
+                loanLabel: "कर्ज प्रकार",
+                selectOption: "कर्ज प्रकार निवडा",
+                optBusiness: "व्यवसाय कर्ज",
+                optPersonal: "वैयक्तिक कर्ज",
+                optHome: "गृह कर्ज",
+                optProperty: "मालमत्तेविरुद्ध कर्ज",
+                cityLabel: "शहर",
+                messageLabel: "संदेश",
+                submitBtn: "सबमिट करा",
+                footerText: "&copy; 2023 फिनक्सा फायनान्शियल सर्व्हिसेस. सर्व हक्क राखीव."
+            },
+            hi: {
+                heroTitle: "आपके वित्तीय भविष्य को सशक्त बनाना",
+                heroSubtitle: "अपनी जरूरतों के लिए तैयार सर्वोत्तम ऋण सेवाएं प्राप्त करें।",
+                aboutTitle: "हमारे बारे में",
+                aboutText: "फिनक्सा फाइनेंशियल सर्विसेज विश्वसनीय और कुशल वित्तीय समाधान प्रदान करने के लिए प्रतिबद्ध है। हम व्यक्तियों और व्यवसायों को उनके लक्ष्यों को प्राप्त करने में मदद करने के लिए ऋण सेवाओं की एक श्रृंखला प्रदान करते हैं।",
+                servicesTitle: "हमारी ऋण सेवाएं",
+                businessLoan: "व्यापार ऋण",
+                businessDesc: "आपके व्यवसाय विस्तार और संचालन के लिए लचीला वित्तपोषण।",
+                personalLoan: "व्यक्तिगत ऋण",
+                personalDesc: "व्यक्तिगत जरूरतों और आपात स्थितियों के लिए त्वरित और आसान ऋण।",
+                homeLoan: "घरेलू ऋण",
+                homeDesc: "आपके सपनों के घर को वास्तविकता बनाने के लिए किफायती घरेलू ऋण।",
+                propertyLoan: "संपत्ति के विरुद्ध ऋण",
+                propertyDesc: "तत्काल तरलता के लिए अपनी संपत्ति का लाभ उठाएं।",
+                whyTitle: "हमें क्यों चुनें?",
+                reason1: "विशेषज्ञ मार्गदर्शन",
+                reason1Desc: "हमारी विशेषज्ञ टीम व्यक्तिगत सलाह प्रदान करती है।",
+                reason2: "तेजी से अनुमोदन",
+                reason2Desc: "आपके ऋण आवेदनों की तेजी से प्रसंस्करण और अनुमोदन।",
+                reason3: "प्रतिस्पर्धी दर",
+                reason3Desc: "आकर्षक ब्याज दर और लचीली शर्तें।",
+                formTitle: "संपर्क करें",
+                nameLabel: "नाम",
+                mobileLabel: "मोबाइल",
+                loanLabel: "ऋण प्रकार",
+                selectOption: "ऋण प्रकार चुनें",
+                optBusiness: "व्यापार ऋण",
+                optPersonal: "व्यक्तिगत ऋण",
+                optHome: "घरेलू ऋण",
+                optProperty: "संपत्ति के विरुद्ध ऋण",
+                cityLabel: "शहर",
+                messageLabel: "संदेश",
+                submitBtn: "सबमिट करें",
+                footerText: "&copy; 2023 फिनक्सा फाइनेंशियल सर्विसेज। सभी अधिकार सुरक्षित।"
+            }
+        };
+
+        // Language Switcher
+        const langButtons = document.querySelectorAll('.lang-switcher button');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.id;
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateContent(lang);
             });
         });
 
-        // Form submission handler
-        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const fullName = document.getElementById('fullName').value;
-            const mobileNumber = document.getElementById('mobileNumber').value;
-            const loanType = document.getElementById('loanType').value;
-            
-            // Simple alert for demonstration; in a real app, send to server
-            alert(`Thank you, ${fullName}! We have received your inquiry for ${loanType}. Our team will contact you at ${mobileNumber} soon.`);
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
-</body>
-</html>
+        function updateContent(lang) {
+            document.getElementById('hero-title').textContent = content[lang].heroTitle;
+            document.getElementById('hero-subtitle').textContent = content[lang].heroSubtitle;
+            document.getElementById('about-title').textContent = content[lang].aboutTitle;
+            document.getElementById('about-text').textContent = content[lang].aboutText;
+            document.getElementById('services-title').textContent = content[lang].servicesTitle;
+            document.getElementById('business-loan').textContent = content[lang].businessLoan;
+            document.getElementById('business-desc').textContent = content[lang].businessDesc;
+            document.getElementById('personal-loan').textContent = content[lang].personalLoan;
+            document.getElementById('personal-desc').textContent = content[lang].personalDesc;
+            document.getElementById
