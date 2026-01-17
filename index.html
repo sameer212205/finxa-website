@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finxa Financial Services</title>
+<style>
+body { font-family: Arial; margin: 0; background: #f2f2f2; }
+header { background: #003366; color: white; padding: 15px; text-align: center; }
+nav button { margin: 5px; padding: 8px 12px; cursor: pointer; }
+section { background: white; margin: 15px; padding: 20px; border-radius: 8px; }
+input, select, textarea, button {
+  width: 100%; padding: 10px; margin-top: 8px;
+}
+button { background: #003366; color: white; border: none; }
+
+/* WhatsApp Floating Button */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1 id="title">Finxa Financial Services</h1>
+  <nav>
+    <button onclick="setLang('en')">English</button>
+    <button onclick="setLang('mr')">मराठी</button>
+    <button onclick="setLang('hi')">हिंदी</button>
+  </nav>
+</header>
+
+<section>
+  <h2 id="home">Welcome</h2>
+  <p id="homeText">We provide trusted loan solutions.</p>
+</section>
+
+<section>
+  <h2 id="services">Services</h2>
+  <p id="servicesText">Home Loan, Business Loan, Personal Loan</p>
+</section>
+
+<section>
+  <h2 id="about">About Us</h2>
+  <p id="aboutText">Finxa Financial Services is a trusted finance partner.</p>
+</section>
+
+<section>
+  <h2 id="formTitle">Customer Details</h2>
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input id="name" type="text" placeholder="Full Name" required>
+    <input id="mobile" type="tel" placeholder="Mobile Number" required>
+    <input id="email" type="email" placeholder="Email">
+    <select id="loan">
+      <option>Home Loan</option>
+      <option>Business Loan</option>
+      <option>Personal Loan</option>
+    </select>
+    <input id="city" type="text" placeholder="City">
+    <textarea id="msg" placeholder="Message"></textarea>
+    <button type="submit">Submit & Send on WhatsApp</button>
+  </form>
+</section>
+
+<section>
+  <h2 id="contact">Contact</h2>
+  <p>📞 7977854590</p>
+</section>
+
+<!-- Floating WhatsApp Button -->
+<a class="whatsapp" href="https://wa.me/917977854590" target="_blank">💬</a>
+
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var mobile = document.getElementById("mobile").value;
+  var email = document.getElementById("email").value;
+  var loan = document.getElementById("loan").value;
+  var city = document.getElementById("city").value;
+  var msg = document.getElementById("msg").value;
+
+  var text =
+    "📌 New Loan Enquiry %0A%0A" +
+    "Name: " + name + "%0A" +
+    "Mobile: " + mobile + "%0A" +
+    "Email: " + email + "%0A" +
+    "Loan Type: " + loan + "%0A" +
+    "City: " + city + "%0A" +
+    "Message: " + msg;
+
+  window.open("https://wa.me/917977854590?text=" + text, "_blank");
+}
+
+function setLang(lang) {
+  if(lang === 'mr') {
+    title.innerText = "Finxa फायनान्शियल सर्व्हिसेस";
+    home.innerText = "स्वागत आहे";
+    homeText.innerText = "आम्ही विश्वासार्ह कर्ज सेवा पुरवतो.";
+    services.innerText = "सेवा";
+    servicesText.innerText = "होम लोन, बिझनेस लोन, पर्सनल लोन";
+    about.innerText = "आमच्याबद्दल";
+    aboutText.innerText = "Finxa ही विश्वासार्ह फायनान्स कंपनी आहे.";
+    formTitle.innerText = "ग्राहक माहिती";
+  }
+  if(lang === 'hi') {
+    title.innerText = "Finxa Financial Services";
+    home.innerText = "स्वागत है";
+    homeText.innerText = "हम भरोसेमंद लोन सेवाएं प्रदान करते हैं।";
+    services.innerText = "सेवाएं";
+    servicesText.innerText = "होम लोन, बिज़नेस लोन, पर्सनल लोन";
+    about.innerText = "हमारे बारे में";
+    aboutText.innerText = "Finxa एक विश्वसनीय फाइनेंस कंपनी है।";
+    formTitle.innerText = "ग्राहक विवरण";
+  }
+  if(lang === 'en') location.reload();
+}
+</script>
+
+</body>
+</html>
