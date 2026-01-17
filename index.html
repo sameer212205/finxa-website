@@ -3,274 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Finxa Financial Services - Loans Made Easy</title>
+<title>Finxa Financial Services</title>
+
 <style>
-    /* Base Styles */
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Roboto',sans-serif;line-height:1.6;color:#333;background:#fff;}
-    a{text-decoration:none;color:inherit;}
-    ul{list-style:none;}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-    :root{--navy:#003366;--soft-grey:#f5f5f5;--white:#fff;}
+:root{
+  --blue:#0b3c8a;
+  --gold:#d4a017;
+  --bg:#f7f9fc;
+}
 
-    /* Nav */
-    nav{position:fixed;top:0;width:100%;background:var(--navy);color:var(--white);z-index:1000;padding:10px 0;}
-    nav .container{display:flex;justify-content:space-between;align-items:center;}
-    nav .logo img{height:50px;}
-    nav ul{display:flex;}
-    nav ul li{margin-left:20px;}
-    nav ul li a{padding:10px;transition:0.3s;}
-    nav ul li a:hover{background:rgba(255,255,255,0.1);}
-    .lang-selector{display:flex;align-items:center;}
-    .lang-selector select{background:var(--white);border:none;padding:5px;margin-left:10px;}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#222;
+}
 
-    /* Hero */
-    #hero{background:linear-gradient(to right,var(--navy),var(--soft-grey));color:var(--white);padding:120px 0 80px;text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;}
-    #hero h1{font-size:3rem;margin-bottom:20px;}
-    #hero p{font-size:1.2rem;margin-bottom:30px;}
-    #hero .cta{background:var(--white);color:var(--navy);padding:15px 30px;border-radius:5px;font-weight:bold;transition:0.3s;}
-    #hero .cta:hover{background:var(--soft-grey);}
+nav{
+  background:var(--blue);
+  color:#fff;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+}
 
-    /* Sections */
-    section{padding:80px 0;}
-    section h2{text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--navy);}
-    section p{margin-bottom:20px;}
+nav .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+}
 
-    /* About */
-    #about{background:var(--soft-grey);}
+.logo img{
+  height:45px;
+}
 
-    /* Loan Products */
-    #products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-    .product{background:var(--white);padding:20px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);text-align:center;}
-    .product h3{color:var(--navy);margin-bottom:10px;}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
 
-    /* Features */
-    #features{background:var(--soft-grey);}
-    #features ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-    #features li{background:var(--white);padding:20px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+nav ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    /* How It Works */
-    #process{text-align:center;}
-    .step{margin-bottom:40px;}
-    .step h3{color:var(--navy);}
+#hero{
+  margin-top:70px;
+  height:90vh;
+  background:
+  linear-gradient(rgba(11,60,138,.85),rgba(11,60,138,.85)),
+  url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a");
+  background-size:cover;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  text-align:center;
+}
 
-    /* Form */
-    #inquiry{background:var(--soft-grey);}
-    form{max-width:600px;margin:0 auto;background:var(--white);padding:40px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
-    form input,form select,form textarea{width:100%;padding:10px;margin-bottom:20px;border:1px solid #ccc;border-radius:5px;}
-    form button{background:var(--navy);color:var(--white);padding:15px;border:none;border-radius:5px;width:100%;font-weight:bold;cursor:pointer;transition:0.3s;}
-    form button:hover{background:#005599;}
+#hero h1{
+  font-size:48px;
+}
 
-    /* FAQs */
-    #faqs{max-width:800px;margin:0 auto;}
-    .faq{margin-bottom:20px;}
-    .faq h3{color:var(--navy);cursor:pointer;}
-    .faq p{display:none;}
+.cta{
+  background:var(--gold);
+  color:#fff;
+  padding:15px 30px;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:6px;
+  display:inline-block;
+  margin-top:20px;
+}
 
-    /* Testimonials */
-    #testimonials{background:var(--soft-grey);}
-    .testimonial{background:var(--white);padding:20px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,0.1);margin-bottom:20px;}
-    .testimonial p{font-style:italic;}
-    .testimonial cite{font-weight:bold;color:var(--navy);}
+section{
+  padding:70px 20px;
+}
 
-    /* Footer */
-    footer{background:var(--navy);color:var(--white);padding:40px 0;text-align:center;}
-    footer .container{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-    footer h3{margin-bottom:20px;}
-    footer ul li{margin-bottom:10px;}
-    footer a:hover{text-decoration:underline;}
+.container{
+  max-width:1200px;
+  margin:auto;
+}
 
-    /* Floating WhatsApp */
-    #whatsapp-btn{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;border:none;border-radius:50%;width:60px;height:60px;font-size:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1000;}
+h2{
+  text-align:center;
+  color:var(--blue);
+  margin-bottom:40px;
+}
 
-    /* Responsive */
-    @media(max-width:768px){
-        nav ul{display:none;}
-        #hero h1{font-size:2rem;}
-        #hero p{font-size:1rem;}
-        section{padding:40px 0;}
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#fff;
+  padding:25px;
+  border-top:5px solid var(--gold);
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  border-radius:6px;
+}
+
+.card span{
+  display:block;
+  margin-top:10px;
+  color:var(--blue);
+  font-weight:bold;
+}
+
+#calculator, #inquiry{
+  background:var(--bg);
+}
+
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  background:var(--blue);
+  color:#fff;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:var(--gold);
+}
+
+.result-box{
+  background:#fff;
+  padding:20px;
+  margin-top:20px;
+  border-left:4px solid var(--gold);
+}
+
+footer{
+  background:var(--blue);
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <nav>
-    <div class="container">
-        <div class="logo"><img src="https://i.ibb.co/2s6TcK8/finxa-logo.png" alt="Finxa Logo"></div>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#products">Loan Products</a></li>
-            <li><a href="#features">Why Choose Us</a></li>
-            <li><a href="#process">How It Works</a></li>
-            <li><a href="#inquiry">Inquiry</a></li>
-            <li><a href="#faqs">FAQs</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-        </ul>
-        <div class="lang-selector">
-            <label for="lang">Language:</label>
-            <select id="lang">
-                <option value="en">English</option>
-                <option value="mr">Marathi</option>
-                <option value="hi">Hindi</option>
-            </select>
-        </div>
+  <div class="container">
+    <div class="logo">
+      <img src="finxa-logo.png">
     </div>
+    <ul>
+      <li><a href="#products">Loans</a></li>
+      <li><a href="#calculator">EMI</a></li>
+      <li><a href="#inquiry">Apply</a></li>
+    </ul>
+  </div>
 </nav>
 
 <section id="hero">
-    <div class="container">
-        <h1 id="hero-title">Loans Made Easy with Finxa</h1>
-        <p id="hero-subtitle">Get quick and hassle-free loans for your business, personal needs, home, or property. Apply now!</p>
-        <a href="#inquiry" class="cta" id="hero-cta">Apply Now</a>
-    </div>
-</section>
-
-<section id="about">
-    <div class="container">
-        <h2 id="about-title">About Us</h2>
-        <p id="about-text">Finxa Financial Services provides secure, fast, and tailored financial solutions for individuals and businesses. Our team ensures smooth, trustworthy, and efficient loan processes.</p>
-    </div>
+  <div class="container">
+    <h1>Loans Made Easy With Finxa</h1>
+    <p>Trusted financial solutions for individuals & businesses</p>
+    <a href="#inquiry" class="cta">Apply Now</a>
+  </div>
 </section>
 
 <section id="products">
-    <div class="container">
-        <h2 id="products-title">Our Loan Products</h2>
-        <div class="product">
-            <h3 id="business-loan">Business Loan</h3>
-            <p id="business-desc">Flexible financing for your business growth.</p>
-        </div>
-        <div class="product">
-            <h3 id="personal-loan">Personal Loan</h3>
-            <p id="personal-desc">Quick loans for personal expenses.</p>
-        </div>
-        <div class="product">
-            <h3 id="home-loan">Home Loan</h3>
-            <p id="home-desc">Achieve your dream home with our home loans.</p>
-        </div>
-        <div class="product">
-            <h3 id="property-loan">Loan Against Property</h3>
-            <p id="property-desc">Leverage your property for instant funds.</p>
-        </div>
-    </div>
+<div class="container">
+<h2>Our Loan Products</h2>
+<div class="products">
+
+<div class="card">
+<h3>Business Loan</h3>
+<p>Flexible funding to grow your business smoothly.</p>
+<span>ROI starts @ 14%</span>
+</div>
+
+<div class="card">
+<h3>Home Loan</h3>
+<p>Make your dream home a reality with easy EMIs.</p>
+<span>ROI starts @ 7.15%</span>
+</div>
+
+<div class="card">
+<h3>Personal Loan</h3>
+<p>Instant personal loans for urgent needs.</p>
+<span>ROI starts @ 9.99%</span>
+</div>
+
+<div class="card">
+<h3>Loan Against Property</h3>
+<p>Unlock value of your property with lower interest.</p>
+<span>ROI starts @ 9%</span>
+</div>
+
+</div>
+</div>
 </section>
 
-<section id="features">
-    <div class="container">
-        <h2 id="features-title">Why Choose Us?</h2>
-        <ul>
-            <li id="feature1">Low Interest Rates</li>
-            <li id="feature2">Fast Approval</li>
-            <li id="feature3">Flexible Repayment</li>
-            <li id="feature4">Secure Process</li>
-        </ul>
-    </div>
-</section>
+<section id="calculator">
+<div class="container">
+<h2>EMI Calculator</h2>
 
-<section id="process">
-    <div class="container">
-        <h2 id="process-title">How It Works</h2>
-        <div class="step">
-            <h3 id="step1">1. Apply Online</h3>
-            <p id="step1-desc">Fill out our simple inquiry form.</p>
-        </div>
-        <div class="step">
-            <h3 id="step2">2. Get Approved</h3>
-            <p id="step2-desc">We review and approve your application quickly.</p>
-        </div>
-        <div class="step">
-            <h3 id="step3">3. Receive Funds</h3>
-            <p id="step3-desc">Funds are disbursed directly to your account.</p>
-        </div>
-    </div>
+<select id="loanType">
+<option value="">Select Loan</option>
+<option value="14">Business Loan</option>
+<option value="7.15">Home Loan</option>
+<option value="9.99">Personal Loan</option>
+<option value="9">Loan Against Property</option>
+</select>
+
+<input type="number" id="amount" placeholder="Loan Amount">
+<input type="number" id="years" placeholder="Tenure (Years)">
+<button onclick="calcEMI()">Calculate EMI</button>
+
+<div id="emiResult" class="result-box"></div>
+</div>
 </section>
 
 <section id="inquiry">
-    <div class="container">
-        <h2 id="inquiry-title">Customer Inquiry</h2>
-        <form id="inquiry-form">
-            <input type="text" id="name" placeholder="Name" required>
-            <input type="tel" id="mobile" placeholder="Mobile" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <select id="loan-type" required>
-                <option value="">Select Loan Type</option>
-                <option value="Business Loan">Business Loan</option>
-                <option value="Personal Loan">Personal Loan</option>
-                <option value="Home Loan">Home Loan</option>
-                <option value="Loan Against Property">Loan Against Property</option>
-            </select>
-            <input type="text" id="city" placeholder="City" required>
-            <textarea id="message" placeholder="Message" rows="4"></textarea>
-            <button type="submit" id="submit-btn">Submit Inquiry</button>
-        </form>
-    </div>
-</section>
+<div class="container">
+<h2>Apply Now</h2>
 
-<section id="faqs">
-    <div class="container">
-        <h2 id="faqs-title">Frequently Asked Questions</h2>
-        <div class="faq">
-            <h3 id="faq1-q">What documents are required?</h3>
-            <p id="faq1-a">ID proof, address proof, and income documents.</p>
-        </div>
-        <div class="faq">
-            <h3 id="faq2-q">How long does approval take?</h3>
-            <p id="faq2-a">Typically 1-3 business days.</p>
-        </div>
-    </div>
-</section>
+<form onsubmit="submitForm(event)">
+<input required placeholder="Full Name" id="name">
+<input required placeholder="Mobile Number" id="mobile">
+<input required placeholder="City" id="city">
+<select required id="loan">
+<option value="">Loan Type</option>
+<option>Business Loan</option>
+<option>Home Loan</option>
+<option>Personal Loan</option>
+<option>Loan Against Property</option>
+</select>
+<button>Submit</button>
+</form>
 
-<section id="testimonials">
-    <div class="container">
-        <h2 id="testimonials-title">Testimonials</h2>
-        <div class="testimonial">
-            <p id="test1">"Great service and quick loans!"</p>
-            <cite>- John Doe</cite>
-        </div>
-        <div class="testimonial">
-            <p id="test2">"Reliable and trustworthy."</p>
-            <cite>- Jane Smith</cite>
-        </div>
-    </div>
+<div id="submittedData"></div>
+
+<a class="cta" 
+href="https://wa.me/917977854590?text=Hello%20Finxa,%20I%20want%20loan%20details">
+Apply via WhatsApp
+</a>
+
+</div>
 </section>
 
 <footer>
-    <div class="container">
-        <div>
-            <h3>Contact Us</h3>
-            <ul>
-                <li>Phone: +91 7977854590</li>
-                <li>Email: info@finxa.com</li>
-                <li>Address: 123 Finance St, Mumbai, India</li>
-            </ul>
-        </div>
-        <div>
-            <h3>Follow Us</h3>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </div>
-    </div>
+<p>© Finxa Financial Services | Trusted Loan Partner</p>
 </footer>
 
-<!-- WhatsApp Button -->
-<button id="whatsapp-btn">💬</button>
-
 <script>
-    // Smooth Scroll
-    document.querySelectorAll('nav a').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+function calcEMI(){
+let p=document.getElementById("amount").value;
+let r=document.getElementById("loanType").value/12/100;
+let n=document.getElementById("years").value*12;
 
-    // Language translations
-    const translations={
-        en:{'hero-title':'Loans Made Easy with Finxa','hero-subtitle':'Get quick and hassle-free loans for your business, personal needs, home, or property. Apply now!','hero-cta':'Apply Now','about-title':'About Us','about-text':'Finxa Financial Services provides secure, fast, and tailored financial solutions for individuals and businesses. Our team ensures smooth, trustworthy, and efficient loan processes.','products-title':'Our Loan Products','business-loan':'Business Loan','business-desc':'Flexible financing for your business growth.','personal-loan':'Personal Loan','personal-desc':'Quick loans for personal expenses.','home-loan':'Home Loan','home-desc':'Achieve your dream home with our home loans.','property-loan':'Loan Against Property','property-desc':'Leverage your property for instant funds.','features-title':'Why Choose Us?','feature1':'Low Interest Rates','feature2':'Fast Approval','feature3':'Flexible Repayment','feature4':'Secure Process','process-title':'How It Works','step1':'1. Apply Online','step1-desc':'Fill out our simple inquiry form.','step2':'2. Get Approved','step2-desc':'We review and approve your application quickly.','step3':'3. Receive Funds','step3-desc':'Funds are disbursed directly to your account.','inquiry-title':'Customer Inquiry','faqs-title':'Frequently Asked Questions','faq1-q':'What documents are required?','faq1-a':'ID proof, address proof, and income documents.','faq2-q':'How long does approval take?','faq2-a':'Typically 1-3 business days.','testimonials-title':'Testimonials','test1':'"Great service and quick loans!"','test2':'"Reliable and trustworthy."'},
-        mr:{'hero-title':'फिनक्सासह कर्जे सोपे','hero-subtitle':'तुमच्या व्यवसाय, वैयक्तिक गरजा, घर किंवा मालमत्तेसाठी जलद आणि त्रासमुक्त कर्जे मिळवा. आता अर्ज करा!','hero-cta':'आता अर्ज करा','about-title':'आमच्याबद्दल','about-text':'फिनक्स फायनान्शियल सर्व्हिसेस व्यक्ती आणि व्यवसायांना सुरक्षित, जलद व सानुकूल आर्थिक उपाय प्रदान करते. आमची टीम सुरक्षित आणि कार्यक्षम कर्ज प्रक्रिया सुनिश्चित करते.','products-title':'आमची कर्ज उत्पादने','business-loan':'व्यवसाय कर्ज','business-desc':'तुमच्या व्यवसाय वाढीसाठी लवचिक वित्तपुरवठा.','personal-loan':'वैयक्तिक कर्ज','personal-desc':'वैयक्तिक खर्चांसाठी जलद कर्जे.','home-loan':'घर कर्ज','home-desc':'आमच्या घर कर्जांसह तुमचे स्वप्नाचे घर साध्य करा.','property-loan':'मालमत्तेविरुद्ध कर्ज','property-desc':'मालमत्तेचा वापर करून तातडीने निधी.','features-title':'आम्हाला का निवडावे?','feature1':'कमी व्याज दर','feature2':'जलद मंजुरी','feature3':'लवचिक परतफेड','feature4':'सुरक्षित प्रक्रिया','process-title':'हे कसे कार्य करते','step1':'1. ऑनलाइन अर्ज करा','step1-desc':'आमच्या सोप्या फॉर्ममध्ये माहिती भरा.','step2':'2. मंजूर करा','step2-desc':'आम्ही तुमचा अर्ज जलदपणे तपासतो आणि मंजूर करतो.','step3':'3. निधी मिळवा','step3-desc':'निधी थेट तुमच्या खात्यात वितरित केली जाते.','inquiry-title':'ग्राहक चौकशी','faqs-title':'वारंवार विचारले जाणारे प्रश्न','faq1-q':'कागदपत्रे कोणती लागतात?','faq1-a':'ओळख, पत्ता आणि उत्पन्न कागदपत्रे.','faq2-q':'मंजुरी किती वेळेत होते?','faq2-a':'साधारण 1-3 कामकाजाचे दिवस.','testimonials-title':'साक्षात्कार','test1':'"उत्कृष्ट सेवा आणि जलद कर्ज!"','test2':'"विश्वसनीय आणि भरोसेमंद."'}};
-    const langSelect=document.getElementById('lang');
-    langSelect.addEventListener('change',()=>{const lang=langSelect.value;Object.keys(translations[lang]).forEach(id=>{const el=document.getElementById(id);if(el) el.innerHTML=translations[lang][id];});});
+let emi=(p*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+document.getElementById("emiResult").innerHTML=
+"<b>Monthly EMI:</b> ₹"+emi.toFixed(2);
+}
 
-    // WhatsApp Button
-    document.getElementById('whatsapp-btn').addEventListener('click',()=>{
-        const name=document.getElementById('name').value||"";
-        const mobile=document.getElementById('mobile').value||"";
+function submitForm(e){
+e.preventDefault();
+let html=`
+<div class="result-box">
+<h3>Submitted Details</h3>
+<p>Name: ${name.value}</p>
+<p>Mobile: ${mobile.value}</p>
+<p>City: ${city.value}</p>
+<p>Loan: ${loan.value}</p>
+</div>`;
+document.getElementById("submittedData").innerHTML=html;
+}
+</script>
+
+</body>
+</html>
