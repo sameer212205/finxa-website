@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finxa Financial Services</title>
+    <title>Finxa Financial Services - Loans Made Easy</title>
     <style>
-        /* Reset and base styles */
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -14,347 +14,497 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: #333; /* Soft grey */
-            background-color: #f9f9f9; /* Light grey background */
+            color: #333;
+            background-color: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Header */
-        header {
-            background-color: #ffffff;
+
+        /* Colors */
+        :root {
+            --navy: #003366;
+            --soft-grey: #f5f5f5;
+            --white: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--navy);
+            color: var(--white);
+            z-index: 1000;
             padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .logo {
-            font-size: 24px;
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #003366; /* Navy blue */
         }
+        nav ul {
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .lang-selector {
+            display: flex;
+            align-items: center;
+        }
+        .lang-selector select {
+            background: var(--white);
+            border: none;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
         /* Hero Section */
         #hero {
-            background: linear-gradient(to right, #003366, #0055a5);
-            color: white;
-            padding: 100px 0;
+            background: linear-gradient(to right, var(--navy), var(--soft-grey));
+            color: var(--white);
+            padding: 100px 0 80px;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         #hero h1 {
-            font-size: 48px;
+            font-size: 3rem;
             margin-bottom: 20px;
         }
         #hero p {
-            font-size: 20px;
+            font-size: 1.2rem;
             margin-bottom: 30px;
         }
-        .btn {
-            background-color: #ffffff;
-            color: #003366;
+        #hero .cta {
+            background-color: var(--white);
+            color: var(--navy);
             padding: 15px 30px;
-            text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s;
         }
-        .btn:hover {
-            background-color: #e0e0e0;
+        #hero .cta:hover {
+            background-color: var(--soft-grey);
         }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--navy);
+        }
+        section p {
+            margin-bottom: 20px;
+        }
+
         /* About Us */
         #about {
-            padding: 60px 0;
-            background-color: #ffffff;
+            background-color: var(--soft-grey);
         }
-        #about h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #003366;
-        }
-        #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        /* Loan Services */
-        #services {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-        #services h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #003366;
-        }
-        .services-grid {
+
+        /* Loan Products */
+        #products {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        .service-item {
-            background-color: #ffffff;
+        .product {
+            background-color: var(--white);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             text-align: center;
         }
-        .service-item h3 {
-            color: #003366;
+        .product h3 {
+            color: var(--navy);
             margin-bottom: 10px;
         }
-        /* Why Choose Us */
-        #why-choose {
-            padding: 60px 0;
-            background-color: #ffffff;
+
+        /* Features */
+        #features {
+            background-color: var(--soft-grey);
         }
-        #why-choose h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #003366;
-        }
-        .why-list {
+        #features ul {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
         }
-        .why-item {
+        #features li {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* How It Works */
+        #process {
             text-align: center;
         }
-        .why-item h3 {
-            color: #003366;
-            margin-bottom: 10px;
-        }
-        /* Customer Form */
-        #form {
-            padding: 60px 0;
-            background-color: #f9f9f9;
-        }
-        #form h2 {
-            text-align: center;
+        .step {
             margin-bottom: 40px;
-            color: #003366;
+        }
+        .step h3 {
+            color: var(--navy);
+        }
+
+        /* Form */
+        #inquiry {
+            background-color: var(--soft-grey);
         }
         form {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #ffffff;
-            padding: 30px;
+            background-color: var(--white);
+            padding: 40px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        input, select, textarea {
+        form input, form select, form textarea {
             width: 100%;
             padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px;
         }
-        button {
-            width: 100%;
+        form button {
+            background-color: var(--navy);
+            color: var(--white);
             padding: 15px;
-            background-color: #003366;
-            color: white;
             border: none;
             border-radius: 5px;
-            font-size: 18px;
+            width: 100%;
+            font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        button:hover {
-            background-color: #0055a5;
+        form button:hover {
+            background-color: #005599;
         }
+
+        /* FAQs */
+        #faqs {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .faq h3 {
+            color: var(--navy);
+            cursor: pointer;
+        }
+        .faq p {
+            display: none;
+        }
+
+        /* Testimonials */
+        #testimonials {
+            background-color: var(--soft-grey);
+        }
+        .testimonial {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .testimonial cite {
+            font-weight: bold;
+            color: var(--navy);
+        }
+
         /* Footer */
         footer {
-            background-color: #003366;
-            color: white;
-            padding: 20px 0;
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 40px 0;
             text-align: center;
         }
-        /* Language Switcher */
-        .lang-switcher {
-            position: absolute;
-            top: 10px;
-            right: 20px;
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
-        .lang-btn {
-            background: none;
-            border: none;
-            color: #003366;
-            cursor: pointer;
-            margin: 0 5px;
-            font-weight: bold;
+        footer h3 {
+            margin-bottom: 20px;
         }
-        .lang-btn.active {
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        footer a:hover {
             text-decoration: underline;
         }
+
         /* Responsive */
         @media (max-width: 768px) {
+            nav ul {
+                display: none; /* Simple hide for mobile; can add hamburger later */
+            }
             #hero h1 {
-                font-size: 36px;
+                font-size: 2rem;
             }
             #hero p {
-                font-size: 18px;
+                font-size: 1rem;
             }
-            .services-grid, .why-list {
-                grid-template-columns: 1fr;
+            section {
+                padding: 40px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
             <div class="logo">Finxa Financial Services</div>
-            <div class="lang-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="mr">MR</button>
-                <button class="lang-btn" data-lang="hi">HI</button>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Loan Products</a></li>
+                <li><a href="#features">Why Choose Us</a></li>
+                <li><a href="#process">How It Works</a></li>
+                <li><a href="#inquiry">Inquiry</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+            <div class="lang-selector">
+                <label for="lang">Language:</label>
+                <select id="lang">
+                    <option value="en">English</option>
+                    <option value="mr">Marathi</option>
+                    <option value="hi">Hindi</option>
+                </select>
             </div>
         </div>
-    </header>
+    </nav>
 
     <section id="hero">
         <div class="container">
-            <h1 data-lang-en="Welcome to Finxa Financial Services" data-lang-mr="फिनक्सा फायनान्शियल सर्व्हिसेसमध्ये आपले स्वागत" data-lang-hi="फिनक्सा फाइनेंशियल सर्विसेज में आपका स्वागत">Welcome to Finxa Financial Services</h1>
-            <p data-lang-en="Your trusted partner for all financial needs." data-lang-mr="सर्व आर्थिक गरजांसाठी तुमचा विश्वासू भागीदार." data-lang-hi="सभी वित्तीय आवश्यकताओं के लिए आपका विश्वसनीय साथी।">Your trusted partner for all financial needs.</p>
-            <a href="#form" class="btn">Get Started</a>
+            <h1 id="hero-title">Loans Made Easy with Finxa</h1>
+            <p id="hero-subtitle">Get quick and hassle-free loans for your business, personal needs, home, or property. Apply now!</p>
+            <a href="#inquiry" class="cta" id="hero-cta">Apply Now</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2 data-lang-en="About Us" data-lang-mr="आमच्याबद्दल" data-lang-hi="हमारे बारे में">About Us</h2>
-            <p data-lang-en="Finxa Financial Services is committed to providing personalized financial solutions to individuals and businesses. With years of experience, we offer a range of loan services tailored to your needs." data-lang-mr="फिनक्सा फायनान्शियल सर्व्हिसेस व्यक्ती आणि व्यवसायांना वैयक्तिक आर्थिक उपाय प्रदान करण्यासाठी वचनबद्ध आहे. वर्षांच्या अनुभवासह, आम्ही तुमच्या गरजेनुसार विविध कर्ज सेवा देतो." data-lang-hi="फिनक्सा फाइनेंशियल सर्विसेज व्यक्तियों और व्यवसायों को व्यक्तिगत वित्तीय समाधान प्रदान करने के लिए प्रतिबद्ध है। वर्षों के अनुभव के साथ, हम आपकी आवश्यकताओं के अनुसार ऋण सेवाओं की एक श्रृंखला प्रदान करते हैं।">Finxa Financial Services is committed to providing personalized financial solutions to individuals and businesses. With years of experience, we offer a range of loan services tailored to your needs.</p>
+            <h2 id="about-title">About Us</h2>
+            <p id="about-text">Finxa Financial Services is committed to providing tailored financial solutions to individuals and businesses. With years of experience, we ensure secure and efficient loan processes.</p>
         </div>
     </section>
 
-    <section id="services">
+    <section id="products">
         <div class="container">
-            <h2 data-lang-en="Our Loan Services" data-lang-mr="आमच्या कर्ज सेवा" data-lang-hi="हमारी ऋण सेवाएं">Our Loan Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3 data-lang-en="Business Loan" data-lang-mr="व्यवसाय कर्ज" data-lang-hi="व्यापार ऋण">Business Loan</h3>
-                    <p data-lang-en="Flexible financing for your business growth." data-lang-mr="तुमच्या व्यवसायाच्या वाढीसाठी लवचिक वित्तपुरवठा." data-lang-hi="आपके व्यवसाय की वृद्धि के लिए लचीला वित्त।">Flexible financing for your business growth.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang-en="Personal Loan" data-lang-mr="वैयक्तिक कर्ज" data-lang-hi="व्यक्तिगत ऋण">Personal Loan</h3>
-                    <p data-lang-en="Quick loans for personal expenses." data-lang-mr="वैयक्तिक खर्चांसाठी जलद कर्जे." data-lang-hi="व्यक्तिगत खर्चों के लिए त्वरित ऋण।">Quick loans for personal expenses.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang-en="Home Loan" data-lang-mr="घर कर्ज" data-lang-hi="घर ऋण">Home Loan</h3>
-                    <p data-lang-en="Achieve your dream home with our home loans." data-lang-mr="आमच्या घर कर्जांसह तुमच्या स्वप्नाच्या घराला हात घाला." data-lang-hi="हमारे घर ऋण के साथ अपने सपने के घर को प्राप्त करें।">Achieve your dream home with our home loans.</p>
-                </div>
-                <div class="service-item">
-                    <h3 data-lang-en="Loan Against Property" data-lang-mr="मालमत्तेविरुद्ध कर्ज" data-lang-hi="संपत्ति के विरुद्ध ऋण">Loan Against Property</h3>
-                    <p data-lang-en="Leverage your property for instant funds." data-lang-mr="तात्काळ निधीसाठी तुमच्या मालमत्तेचा लाभ घ्या." data-lang-hi="तत्काल धन के लिए अपनी संपत्ति का लाभ उठाएं।">Leverage your property for instant funds.</p>
-                </div>
+            <h2 id="products-title">Our Loan Products</h2>
+            <div class="product">
+                <h3 id="business-loan">Business Loan</h3>
+                <p id="business-desc">Flexible financing for your business growth.</p>
+            </div>
+            <div class="product">
+                <h3 id="personal-loan">Personal Loan</h3>
+                <p id="personal-desc">Quick loans for personal expenses.</p>
+            </div>
+            <div class="product">
+                <h3 id="home-loan">Home Loan</h3>
+                <p id="home-desc">Achieve your dream home with our home loans.</p>
+            </div>
+            <div class="product">
+                <h3 id="property-loan">Loan Against Property</h3>
+                <p id="property-desc">Leverage your property for instant funds.</p>
             </div>
         </div>
     </section>
 
-    <section id="why-choose">
+    <section id="features">
         <div class="container">
-            <h2 data-lang-en="Why Choose Us?" data-lang-mr="आम्हाला का निवडावे?" data-lang-hi="हमें क्यों चुनें?">Why Choose Us?</h2>
-            <div class="why-list">
-                <div class="why-item">
-                    <h3 data-lang-en="Expert Guidance" data-lang-mr="तज्ञ मार्गदर्शन" data-lang-hi="विशेषज्ञ मार्गदर्शन">Expert Guidance</h3>
-                    <p data-lang-en="Our team of experts provides personalized advice." data-lang-mr="आमच्या तज्ञांच्या टीमने वैयक्तिक सल्ला देते." data-lang-hi="हमारी विशेषज्ञ टीम व्यक्तिगत सलाह प्रदान करती है।">Our team of experts provides personalized advice.</p>
-                </div>
-                <div class="why-item">
-                    <h3 data-lang-en="Fast Approval" data-lang-mr="जलद मंजूरी" data-lang-hi="तेजी से अनुमोदन">Fast Approval</h3>
-                    <p data-lang-en="Get your loans approved quickly and efficiently." data-lang-mr="तुमची कर्जे जलद आणि कार्यक्षमतेने मंजूर करा." data-lang-hi="अपने ऋण को जल्दी और कुशलता से स्वीकृत करें।">Get your loans approved quickly and efficiently.</p>
-                </div>
-                <div class="why-item">
-                    <h3 data-lang-en="Competitive Rates" data-lang-mr="स्पर्धात्मक दर" data-lang-hi="प्रतिस्पर्धी दर">Competitive Rates</h3>
-                    <p data-lang-en="Enjoy the best interest rates in the market." data-lang-mr="बाजारातील सर्वोत्तम व्याज दरांचा आनंद घ्या." data-lang-hi="बाजार में सर्वोत्तम ब्याज दरों का आनंद लें।">Enjoy the best interest rates in the market.</p>
-                </div>
+            <h2 id="features-title">Why Choose Us?</h2>
+            <ul>
+                <li id="feature1">Low Interest Rates</li>
+                <li id="feature2">Fast Approval</li>
+                <li id="feature3">Flexible Repayment</li>
+                <li id="feature4">Secure Process</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="container">
+            <h2 id="process-title">How It Works</h2>
+            <div class="step">
+                <h3 id="step1">1. Apply Online</h3>
+                <p id="step1-desc">Fill out our simple inquiry form.</p>
+            </div>
+            <div class="step">
+                <h3 id="step2">2. Get Approved</h3>
+                <p id="step2-desc">We review and approve your application quickly.</p>
+            </div>
+            <div class="step">
+                <h3 id="step3">3. Receive Funds</h3>
+                <p id="step3-desc">Funds are disbursed directly to your account.</p>
             </div>
         </div>
     </section>
 
-    <section id="form">
+    <section id="inquiry">
         <div class="container">
-            <h2 data-lang-en="Contact Us" data-lang-mr="आमच्याशी संपर्क साधा" data-lang-hi="हमसे संपर्क करें">Contact Us</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name" data-lang-en="Name" data-lang-mr="नाव" data-lang-hi="नाम">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="mobile" data-lang-en="Mobile" data-lang-mr="मोबाइल" data-lang-hi="मोबाइल">Mobile</label>
-                    <input type="tel" id="mobile" name="mobile" required>
-                </div>
-                <div class="form-group">
-                    <label for="loanType" data-lang-en="Loan Type" data-lang-mr="कर्ज प्रकार" data-lang-hi="ऋण प्रकार">Loan Type</label>
-                    <select id="loanType" name="loanType" required>
-                        <option value="" data-lang-en="Select Loan Type" data-lang-mr="कर्ज प्रकार निवडा" data-lang-hi="ऋण प्रकार चुनें">Select Loan Type</option>
-                        <option value="Business Loan" data-lang-en="Business Loan" data-lang-mr="व्यवसाय कर्ज" data-lang-hi="व्यापार ऋण">Business Loan</option>
-                        <option value="Personal Loan" data-lang-en="Personal Loan" data-lang-mr="वैयक्तिक कर्ज" data-lang-hi="व्यक्तिगत ऋण">Personal Loan</option>
-                        <option value="Home Loan" data-lang-en="Home Loan" data-lang-mr="घर कर्ज" data-lang-hi="घर ऋण">Home Loan</option>
-                        <option value="Loan Against Property" data-lang-en="Loan Against Property" data-lang-mr="मालमत्तेविरुद्ध कर्ज" data-lang-hi="संपत्ति के विरुद्ध ऋण">Loan Against Property</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="city" data-lang-en="City" data-lang-mr="शहर" data-lang-hi="शहर">City</label>
-                    <input type="text" id="city" name="city" required>
-                </div>
-                <div class="form-group">
-                    <label for="message" data-lang-en="Message" data-lang-mr="संदेश" data-lang-hi="संदेश">Message</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" data-lang-en="Submit" data-lang-mr="सबमिट करा" data-lang-hi="जमा करें">Submit</button>
+            <h2 id="inquiry-title">Customer Inquiry</h2>
+            <form id="inquiry-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="tel" id="mobile" placeholder="Mobile" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <select id="loan-type" required>
+                    <option value="">Select Loan Type</option>
+                    <option value="Business Loan">Business Loan</option>
+                    <option value="Personal Loan">Personal Loan</option>
+                    <option value="Home Loan">Home Loan</option>
+                    <option value="Loan Against Property">Loan Against Property</option>
+                </select>
+                <input type="text" id="city" placeholder="City" required>
+                <textarea id="message" placeholder="Message" rows="4"></textarea>
+                <button type="submit" id="submit-btn">Submit Inquiry</button>
             </form>
+        </div>
+    </section>
+
+    <section id="faqs">
+        <div class="container">
+            <h2 id="faqs-title">Frequently Asked Questions</h2>
+            <div class="faq">
+                <h3 id="faq1-q">What documents are required?</h3>
+                <p id="faq1-a">ID proof, address proof, and income documents.</p>
+            </div>
+            <div class="faq">
+                <h3 id="faq2-q">How long does approval take?</h3>
+                <p id="faq2-a">Typically 1-3 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2 id="testimonials-title">Testimonials</h2>
+            <div class="testimonial">
+                <p id="test1">"Great service and quick loans!"</p>
+                <cite>- John Doe</cite>
+            </div>
+            <div class="testimonial">
+                <p id="test2">"Reliable and trustworthy."</p>
+                <cite>- Jane Smith</cite>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p data-lang-en="&copy; 2023 Finxa Financial Services. All rights reserved." data-lang-mr="&copy; 2023 फिनक्सा फायनान्शियल सर्व्हिसेस. सर्व हक्क राखीव." data-lang-hi="&copy; 2023 फिनक्सा फाइनेंशियल सर्विसेज। सभी अधिकार सुरक्षित।">&copy; 2023 Finxa Financial Services. All rights reserved.</p>
+            <div>
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Phone: +1 234 567 890</li>
+                    <li>Email: info@finxa.com</li>
+                    <li>Address: 123 Finance St, City, Country</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Language switcher
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const elements = document.querySelectorAll('[data-lang-en]');
-
-        function setLanguage(lang) {
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-lang-${lang}`);
-                if (text) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
-                        el.placeholder = text;
-                    } else if (el.tagName === 'OPTION') {
-                        el.textContent = text;
-                    } else {
-                        el.textContent = text;
-                    }
-                }
+        // Smooth Scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
             });
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
-        }
-
-        langButtons.forEach(btn => {
-            btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
         });
 
-        // Form submission to WhatsApp
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const mobile = document.getElementById('mobile').value;
-            const loanType = document.getElementById('loanType').value;
-            const city = document.getElementById('city').value;
-            const message = document.getElementById('message').value;
-            const whatsappNumber = '1234567890'; // Placeholder WhatsApp number
-            const whatsappMessage = `Hello, I am ${name
+        // Language Translations
+        const translations = {
+            en: {
+                'hero-title': 'Loans Made Easy with Finxa',
+                'hero-subtitle': 'Get quick and hassle-free loans for your business, personal needs, home, or property. Apply now!',
+                'hero-cta': 'Apply Now',
+                'about-title': 'About Us',
+                'about-text': 'Finxa Financial Services is committed to providing tailored financial solutions to individuals and businesses. With years of experience, we ensure secure and efficient loan processes.',
+                'products-title': 'Our Loan Products',
+                'business-loan': 'Business Loan',
+                'business-desc': 'Flexible financing for your business growth.',
+                'personal-loan': 'Personal Loan',
+                'personal-desc': 'Quick loans for personal expenses.',
+                'home-loan': 'Home Loan',
+                'home-desc': 'Achieve your dream home with our home loans.',
+                'property-loan': 'Loan Against Property',
+                'property-desc': 'Leverage your property for instant funds.',
+                'features-title': 'Why Choose Us?',
+                'feature1': 'Low Interest Rates',
+                'feature2': 'Fast Approval',
+                'feature3': 'Flexible Repayment',
+                'feature4': 'Secure Process',
+                'process-title': 'How It Works',
+                'step1': '1. Apply Online',
+                'step1-desc': 'Fill out our simple inquiry form.',
+                'step2': '2. Get Approved',
+                'step2-desc': 'We review and approve your application quickly.',
+                'step3': '3. Receive Funds',
+                'step3-desc': 'Funds are disbursed directly to your account.',
+                'inquiry-title': 'Customer Inquiry',
+                'faqs-title': 'Frequently Asked Questions',
+                'faq1-q': 'What documents are required?',
+                'faq1-a': 'ID proof, address proof, and income documents.',
+                'faq2-q': 'How long does approval take?',
+                'faq2-a': 'Typically 1-3 business days.',
+                'testimonials-title': 'Testimonials',
+                'test1': '"Great service and quick loans!"',
+                'test2': '"Reliable and trustworthy."'
+            },
+            mr: {
+                'hero-title': 'फिनक्सासह कर्जे सोपे',
+                'hero-subtitle': 'तुमच्या व्यवसाय, वैयक्तिक गरजा, घर किंवा मालमत्तेसाठी जलद आणि त्रासमुक्त कर्जे मिळवा. आता अर्ज करा!',
+                'hero-cta': 'आता अर्ज करा',
+                'about-title': 'आमच्याबद्दल',
+                'about-text': 'फिनक्स फायनान्शियल सर्व्हिसेस व्यक्ती आणि व्यवसायांना तयार केलेल्या आर्थिक उपाय प्रदान करण्यासाठी वचनबद्ध आहे. वर्षांच्या अनुभवासह, आम्ही सुरक्षित आणि कार्यक्षम कर्ज प्रक्रिया सुनिश्चित करतो.',
+                'products-title': 'आमची कर्ज उत्पादने',
+                'business-loan': 'व्यवसाय कर्ज',
+                'business-desc': 'तुमच्या व्यवसाय वाढीसाठी लवचिक वित्तपुरवठा.',
+                'personal-loan': 'वैयक्तिक कर्ज',
+                'personal-desc': 'वैयक्तिक खर्चांसाठी जलद कर्जे.',
+                'home-loan': 'घर कर्ज',
+                'home-desc': 'आमच्या घर कर्जांसह तुमचे स्वप्नाचे घर साध्य करा.',
+                'property-loan': 'मालमत्तेविरुद्ध कर्ज',
+                'property-desc': 'तुमच्या मालमत्तेचा वापर करून तातडीने निधी
